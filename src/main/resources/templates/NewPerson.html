@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>New Person</title>
+    <link rel="stylesheet" th:href="@{/css/person.css}">
+</head>
+<body>
+  <h1>This is new person!</h1>
+  <form th:action="@{/saveperson}" method="post" th:object="${person}">
+      <div class="form-row">
+        <label>Email:</label>
+        <input type="email" th:field="*{email}" required>
+      </div>
+
+      <div class="form-row">
+        <label>FirstName:</label>
+        <input type="text" th:field="*{first_name}" required>
+      </div>
+
+      <div class="form-row">
+          <label>LastName:</label>
+          <input type="text" th:field="*{last_name}" required>
+      </div>
+
+      <div class="form-row">
+          <label>Avatar:</label>
+          <input type="text" th:field="*{avatar}" required>
+      </div>
+
+      <button type="submit">Save</button>
+  </form>
+</body>
+</html>

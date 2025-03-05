@@ -8,6 +8,13 @@
 </head>
 <body>
     <h1>Hello ReqRes users!</h1>
+    <div>
+        <form th:action="@{/persons}" method="get">
+            <input type="text" name="keyword" th:value="${keyword}" autofocus>
+            <button type="submit">Search</button>
+            <a th:href="@{/newperson}">New Person</a>
+        </form>
+    </div>
     <div class="list-person">
         <div th:each="person: ${persons}" class="person">
             <div th:text="${person.getFirst_name()}" class="name"></div>
@@ -16,6 +23,9 @@
             </div>
             <div>
                 <img th:src="${person.getAvatar()}"/>
+            </div>
+            <div class="command">
+                <button>Remove</button>
             </div>
         </div>
     </div>
