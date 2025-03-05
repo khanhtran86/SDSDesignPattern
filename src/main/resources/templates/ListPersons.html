@@ -11,7 +11,9 @@
     <div class="list-person">
         <div th:each="person: ${persons}" class="person">
             <div th:text="${person.getFirst_name()}" class="name"></div>
-            <div th:text="${person.getEmail()}"></div>
+            <div>
+                <a th:href="'mailto:' +${person.getEmail()}" th:text="${utils.HideEmail(person.getEmail())}"></a>
+            </div>
             <div>
                 <img th:src="${person.getAvatar()}"/>
             </div>

@@ -1,5 +1,6 @@
 package com.samsung.firstspringboot.Controller;
 
+import com.samsung.firstspringboot.Common.Utilities;
 import com.samsung.firstspringboot.Models.DataModels.Person;
 import com.samsung.firstspringboot.Services.IPersonService;
 import com.samsung.firstspringboot.Services.PersonService;
@@ -16,15 +17,15 @@ public class PersonController {
     @Autowired
     IPersonService personService;
 
-//    public PersonController(PersonService personService) {
-//        this.personService = personService;
-//    }
+    @Autowired
+    Utilities utility;
 
     @GetMapping("persons")
     public String ListPerson(final Model model) throws IOException {
         List<Person> lstPersons = personService.readPersonsFromJson();
 
         model.addAttribute("persons", lstPersons);
+        model.addAttribute("utils", utility);
         return "ListPersons";
     }
 }
