@@ -1,0 +1,26 @@
+body{
+    font-family: sans-serif;
+    text-align: center;
+}
+
+.list-person
+{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.person
+{
+    width: 170px;
+}
+.person>div
+{
+    line-height: 30px;
+}
+
+.person>.name
+{
+    font-weight: bold;
+}

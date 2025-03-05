@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>List Person</title>
+    <link rel="stylesheet" th:href="@{/css/person.css}">
+</head>
+<body>
+    <h1>Hello ReqRes users!</h1>
+    <div class="list-person">
+        <div th:each="person: ${persons}" class="person">
+            <div th:text="${person.getFirst_name()}" class="name"></div>
+            <div th:text="${person.getEmail()}"></div>
+            <div>
+                <img th:src="${person.getAvatar()}"/>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
