@@ -25,7 +25,10 @@
                 <img th:src="${person.getAvatar()}"/>
             </div>
             <div class="command">
-                <button>Remove</button>
+                <form th:action="@{/delete}">
+                    <input type="hidden" name="id" th:value="${person.getId()}">
+                    <button>Remove</button>
+                </form>
             </div>
         </div>
     </div>

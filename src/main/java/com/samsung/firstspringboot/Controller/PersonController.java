@@ -55,4 +55,10 @@ public class PersonController {
         //Redirect sang list Person
         return "redirect:/persons";
     }
+
+    @GetMapping("/delete")
+    public String delete(@RequestParam(defaultValue = "") int id)
+    {
+        return "";
+    }
 }
