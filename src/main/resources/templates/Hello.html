@@ -1,8 +1,44 @@
-<html>
+<!doctype html>
+<html lang="en">
 <head>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>This is ThymeLeaf View</title>
+    <link rel="stylesheet" th:href="@{/css/main.css}">
+    <script th:src="@{/js/welcome.js}"></script>
 </head>
 <body>
-<h1>Hello, Welcome to Spring Boot!</h1>
+    <div>
+        <img th:src="@{/imgs/samsung.png}"/>
+    </div>
+    <h1>Hello Spring boot!</h1>
+    <p th:text="${helloText}">We come from Samsung.</p>
+
+    <div>
+        <p th:text="${user.getEmail()}">User Email</p>
+        <p th:text="${user.getPassword()}"></p>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <td>#</td>
+                <td>Email</td>
+                <td>Password</td>
+                <td>Role</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="user, iterStat:${users}">
+                <td th:text="${iterStat.count}"></td>
+                <td th:text="${user.getEmail()}"></td>
+                <td th:text="${user.getPassword()}"></td>
+                <td>
+                    <span th:if="${user.isAdmin()}">Admin</span>
+                    <span th:unless="${user.isAdmin()}">User</span>
+                </td>
+            </tr>
+        </tbody>
+    </table>
 </body>
 </html>

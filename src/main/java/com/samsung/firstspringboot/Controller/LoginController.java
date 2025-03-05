@@ -27,7 +27,7 @@ public class LoginController {
 
     @PostMapping("/register")
     @ResponseBody
-    public ResponseEntity Register(@RequestBody List<LoginUser> loginUser) {
+    public ResponseEntity<List<LoginUser>> Register(@RequestBody List<LoginUser> loginUser) {
         return ResponseEntity.ok(loginUser);
     }
 
