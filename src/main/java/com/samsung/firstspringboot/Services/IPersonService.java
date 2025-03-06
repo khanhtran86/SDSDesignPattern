@@ -6,4 +6,7 @@ import java.util.List;
 
 public interface IPersonService {
     List<Person> readPersonsFromJson();
+
+
+    void savePerson(Person person);
 }

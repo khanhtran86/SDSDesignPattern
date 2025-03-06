@@ -28,7 +28,7 @@ public class PersonController {
         List<Person> lstPersons = personService.readPersonsFromJson();
         if(keyword!="")
         {
-            lstPersons = lstPersons.stream().filter((s)->(s.getFirst_name() + s.getLast_name()).contains(keyword)).collect(Collectors.toList())
+            lstPersons = lstPersons.stream().filter((s)->(s.getFirstName() + s.getLastName()).contains(keyword)).collect(Collectors.toList())
                     .stream().toList();
         }
         model.addAttribute("keyword", keyword);

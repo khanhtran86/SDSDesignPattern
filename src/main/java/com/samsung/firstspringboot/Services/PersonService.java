@@ -12,6 +12,7 @@ import java.util.List;
 
 @Service
 public class PersonService implements IPersonService {
+
     private ObjectMapper objectMapper = new ObjectMapper(); //Map json to object
 
     public List<Person> readPersonsFromJson(){
@@ -23,4 +24,11 @@ public class PersonService implements IPersonService {
             return null;
         }
     }
+
+    @Override
+    public void savePerson(Person person) {
+
+    }
+
+
 }
